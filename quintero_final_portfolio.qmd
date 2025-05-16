@@ -19,6 +19,7 @@ format:
     theme: cosmo
     css: styles.css
     toc: true
+    echo: false
 
 editor: visual
 ---
@@ -60,8 +61,21 @@ filter(Site %in% c("Gold Coast Mk4", "Cairns Mk4")) %>%
 write_csv(queensland_wave, "dataclean/queensland_wave_clean")
 ```
 
-```{r}
 
+## Visualization One
+```{r}
+#| label: visualization one - wave height
+queensland_wave %>% 
+  pivot_longer(cols = contains("wave"),
+               names_to = "wave_height",
+               values_to = "wave_calc") %>%
+  filter(wave_height != "peakwave") %>%
+  ggplot(aes(x= date,
+             y= wave_calc,
+             group= wave_height,
+             color= wave_height)) +
+  geom_point() +
+  facet_wrap(~Site)
 ```
 
 
