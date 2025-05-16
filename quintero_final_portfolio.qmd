@@ -12,7 +12,7 @@ website:
         text: "Home"
       - href: about.qmd
         text: "About Me"
-      - href: quintero_final_portfolio/quintero_final_portfolio.qmd
+      - href: ericka_quintero_portfolio/ericka_quintero_portfolio.qmd
         text: "Queensland, Australia Project"
 format:
   html:
@@ -20,9 +20,13 @@ format:
     css: styles.css
     toc: true
     echo: false
+    warning: false
+    message: false
 
 editor: visual
 ---
+
+# Project: Wave Activity in Queensland, Australia
 
 ## Data Description
 
@@ -31,8 +35,6 @@ Queensland monitors wave activity along its coastline using a network of floatin
 ## Data Cleaning
 
 To get the data ready for analysis, I first ensured the date formal was consistent and extracted only the date from the full time stamp for easier grouping. I also organized the data by date and location, summarizing wave statistics such as average wave height, peak wave period, and maximum wave height. I filtered out only two locations to represent the north and the south, keeping only data from the Gold Coast and Cairns site. To make the site names easier, I simplified them by removing extra labels. Lastly, I arranged the data by location to make it more structured and ready for further analysis.
-
-## Project
 
 ```{r}
 #| label: data setup
@@ -51,21 +53,24 @@ queensland_wave <- wavedata %>%
   summarize(
     avg_wave = mean(Hsig, na.rm = TRUE),
     peakwave = mean(Tp, na.rm = TRUE), 
-    max_wave = mean(Hmax, na.rm = TRUE)) %>%
+    max_wave = mean(Hmax, na.rm = TRUE),
+    SST = mean(SST, na.rm = TRUE)) %>%
 filter(Site %in% c("Gold Coast Mk4", "Cairns Mk4")) %>%
   mutate(Site = recode(Site,
                "Gold Coast Mk4" = "Gold Coast",
                "Cairns Mk4" = "Cairns")) %>%
   arrange(Site)
 
-write_csv(queensland_wave, "dataclean/queensland_wave_clean")
+write_csv(queensland_wave, "dataclean/queensland_wave")
 ```
 
-
 ## Visualization One
+
 ```{r}
 #| label: visualization one - wave height
-queensland_wave %>% 
+#| echo: false
+#| fig-cap: "Signficant Wave Height in Queensland, Australia"
+wave_height_plot <- queensland_wave %>% 
   pivot_longer(cols = contains("wave"),
                names_to = "wave_height",
                values_to = "wave_calc") %>%
@@ -75,8 +80,34 @@ queensland_wave %>%
              group= wave_height,
              color= wave_height)) +
   geom_point() +
+ labs(title= "Significant Wave Height in Queensland, Australia (2025)",
+      x = "DateTime",
+      y = "Wave Height (m)") +
   facet_wrap(~Site)
+print(wave_height_plot)
 ```
 
+This visualization shows how wave height changed over several days along the coast of Queensland Australia. Each dot represents the height of waves and the tallest waves recorded for specific days this year. Most waves measured around one to one and a half meters. However, the largest waves often exceeded three meters. These changes in wave height suggest that the ocean conditions varied from day to day, possibly due to shifts in weather or ocean activity.
 
+## Visualization Two
 
+```{r}
+#| label: sea surface temperature
+#| echo: false
+#| fig-cap: "Sea Surface Temperature in Queensland, Australia"
+
+wave_sst_plot <- queensland_wave %>%
+  filter(Site %in% c("Gold Coast", "Cairns")) %>%
+  ggplot(aes(x = Site, y = SST)) +
+  geom_boxplot(fill = "lemonchiffon",
+               color = "forestgreen") +
+  labs(title = "Sea Surface Temperature in Northern and Southern Queensland Regions",
+       x = "Site",
+       y = "SST (°C)") +
+  theme_light() +
+  coord_flip()
+
+print(wave_sst_plot)
+```
+
+This visualization highlights the difference in typical sea surface temperatures observed between Cairns in northern Queensland and the Gold Coast in the south.

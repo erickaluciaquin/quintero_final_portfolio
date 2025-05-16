@@ -1,0 +1,65 @@
+[
+  {
+    "objectID": "quintero_final_portfolio.html",
+    "href": "quintero_final_portfolio.html",
+    "title": "Project: Wave Activity in Queensland, Australia",
+    "section": "",
+    "text": "Queensland monitors wave activity along its coastline using a network of floating buoys that measure wave height, movement, and sea surface conditions. These buoys, stationed at locations such as Cairns in the north and Gold Coast in the south, provide hourly updates that contribute to beach safety, maritime operations, and storm preparedness. While both northern and southern areas experience waves, the Gold Coast and surrounding regions typically see more powerful and consistent swells due to stronger Pacific Ocean currents. Northern waters, particularly near Cairns, tend to be calmer except during cyclones or intense monsoonal weather, when conditions can shift dramatically. This valuable data is sourced from Queensland’s official wave monitoring program, available at: https://www.qld.gov.au/environment/coasts-waterways/beach/monitoring\n\n\n\nTo get the data ready for analysis, I first ensured the date formal was consistent and extracted only the date from the full time stamp for easier grouping. I also organized the data by date and location, summarizing wave statistics such as average wave height, peak wave period, and maximum wave height. I filtered out only two locations to represent the north and the south, keeping only data from the Gold Coast and Cairns site. To make the site names easier, I simplified them by removing extra labels. Lastly, I arranged the data by location to make it more structured and ready for further analysis.\n\n\n\n\n\n\n\n\nSignficant Wave Height in Queensland, Australia\n\n\n\n\nThis visualization shows how wave height changed over several days along the coast of Queensland Australia. Each dot represents the height of waves and the tallest waves recorded for specific days this year. Most waves measured around one to one and a half meters. However, the largest waves often exceeded three meters. These changes in wave height suggest that the ocean conditions varied from day to day, possibly due to shifts in weather or ocean activity.\n\n\n\n\n\n\n\n\nSea Surface Temperature in Queensland, Australia\n\n\n\n\nThis visualization highlights the difference in typical sea surface temperatures observed between Cairns in northern Queensland and the Gold Coast in the south."
+  },
+  {
+    "objectID": "quintero_final_portfolio.html#data-description",
+    "href": "quintero_final_portfolio.html#data-description",
+    "title": "Project: Wave Activity in Queensland, Australia",
+    "section": "",
+    "text": "Queensland monitors wave activity along its coastline using a network of floating buoys that measure wave height, movement, and sea surface conditions. These buoys, stationed at locations such as Cairns in the north and Gold Coast in the south, provide hourly updates that contribute to beach safety, maritime operations, and storm preparedness. While both northern and southern areas experience waves, the Gold Coast and surrounding regions typically see more powerful and consistent swells due to stronger Pacific Ocean currents. Northern waters, particularly near Cairns, tend to be calmer except during cyclones or intense monsoonal weather, when conditions can shift dramatically. This valuable data is sourced from Queensland’s official wave monitoring program, available at: https://www.qld.gov.au/environment/coasts-waterways/beach/monitoring"
+  },
+  {
+    "objectID": "quintero_final_portfolio.html#data-cleaning",
+    "href": "quintero_final_portfolio.html#data-cleaning",
+    "title": "Project: Wave Activity in Queensland, Australia",
+    "section": "",
+    "text": "To get the data ready for analysis, I first ensured the date formal was consistent and extracted only the date from the full time stamp for easier grouping. I also organized the data by date and location, summarizing wave statistics such as average wave height, peak wave period, and maximum wave height. I filtered out only two locations to represent the north and the south, keeping only data from the Gold Coast and Cairns site. To make the site names easier, I simplified them by removing extra labels. Lastly, I arranged the data by location to make it more structured and ready for further analysis."
+  },
+  {
+    "objectID": "quintero_final_portfolio.html#visualization-one",
+    "href": "quintero_final_portfolio.html#visualization-one",
+    "title": "Project: Wave Activity in Queensland, Australia",
+    "section": "",
+    "text": "Signficant Wave Height in Queensland, Australia\n\n\n\n\nThis visualization shows how wave height changed over several days along the coast of Queensland Australia. Each dot represents the height of waves and the tallest waves recorded for specific days this year. Most waves measured around one to one and a half meters. However, the largest waves often exceeded three meters. These changes in wave height suggest that the ocean conditions varied from day to day, possibly due to shifts in weather or ocean activity."
+  },
+  {
+    "objectID": "quintero_final_portfolio.html#visualization-two",
+    "href": "quintero_final_portfolio.html#visualization-two",
+    "title": "Project: Wave Activity in Queensland, Australia",
+    "section": "",
+    "text": "Sea Surface Temperature in Queensland, Australia\n\n\n\n\nThis visualization highlights the difference in typical sea surface temperatures observed between Cairns in northern Queensland and the Gold Coast in the south."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2\n\n\nHello! My name is Ericka Quintero, and I’m a junior at California State University, Monterey Bay, majoring in Marine Science with a minor in Data Science. I was born in El Centro, California, and raised in a family of six in Mexicali, Mexico. Growing up near the United States-Mexico border has made me fluent in both English and Spanish. I’m a highly motivated and creative person who enjoys practicing yoga and barre, but I’m most often found at home baking banana cookies."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Ericka Quintero",
+    "section": "",
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n1 + 1\n\n[1] 2\nEricka Quintero is a junior at California State University, Monterey Bay, majoring in Marine Science and minoring in Data Science."
+  },
+  {
+    "objectID": "index.html#education",
+    "href": "index.html#education",
+    "title": "Ericka Quintero",
+    "section": "Education",
+    "text": "Education\nCalifornia State University, Monterey Bay\nB.S. in Marine Science | Aug 2024 - May 2026\nImperial Valley College | Imperial, CA\nA.A. University Studies in Math and Science | Aug 2023 - May 2024\nSaint Mary’s College | Notre Dame, IN\nTransfer | Aug 2021 - May 2023"
+  },
+  {
+    "objectID": "index.html#experience",
+    "href": "index.html#experience",
+    "title": "Ericka Quintero",
+    "section": "Experience",
+    "text": "Experience\nNew Energy Nexus | Innovation Ambassador Intern | August 2023 - September 2023\nVet Point Veterinary Hospital | Volunteer Assistant | June 2023 - Aug 2023"
+  }
+]
