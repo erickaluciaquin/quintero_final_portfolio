@@ -1,28 +1,144 @@
 ---
-title: "Wave Activity in Queensland, Australia"
-author: "Ericka Quintero"
-date: 
-format: html
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Ericka Quintero's ePortfolio"
+  author: "Ericka Quintero"
+  date: "15 May 2025"
+  navbar:
+    left:
+      - href: index.qmd
+        text: "Home"
+      - href: about.qmd
+        text: "About Me"
+      - href: quintero_final_portfolio/quintero_final_portfolio.qmd
+        text: "Queensland, Australia Project"
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
 editor: visual
 ---
 
-## Quarto
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code.
 
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
-
-## Running Code
-
-When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Cmd+Shift+Enter*.
 
 ```{r}
-1 + 1
+library(tidyverse)
+library(lubridate)
+wavedata <- read_csv("wave-7dayopdata.csv", skip = 1)
 ```
-
-You can add options to executable code like this
 
 ```{r}
-#| echo: false
-2 * 2
+#| label: Northern Queensland Region
+
+northern_queen <- wavedata %>%
+  filter(Site == "Cairns Mk4") %>%
+ggplot + 
+  geom_point(mapping = aes(x= DateTime, y= Hsig)) +
+  labs(x= "DateTime",
+       y= "Significant Wave Height (m)",
+       title= "Average of the Highest Third of Waves — Northern Region Queensland, Australia") +
+   theme_light()
+
+northern_queen
 ```
 
-The `echo: false` option disables the printing of code (only output is displayed).
+```{r}
+#| label: Southern Queensland Region
+
+southern_queen <- wavedata %>%
+  filter(Site == "Gold Coast Mk4") %>%
+ggplot + 
+  geom_point(mapping = aes(x=DateTime, y= Hsig)) +
+  labs(x= "DateTime",
+       y= "Significant Wave Height (m)",
+       title= "Average of the Highest Third of Waves — Southern Region Queensland, Australia") +
+   theme_light()
+
+(southern_queen)
+```
+
+```{r}
+#| label: maximum wave height 
+wavedata %>%
+  filter(Site %in% c("Cairns Mk4", "Gold Coast Mk4")) %>%
+  ggplot(aes(x = Site, y = Hmax)) +
+  geom_boxplot(fill = "lavenderblush",
+               color = "slateblue") +
+  labs(title = "Maximum Wave Height (m) in Northern and Southern Queensland Regions",
+       x = "Site",
+       y = "Hmax (m)") +
+  theme_light() +
+  coord_flip()
+
+
+```
+
+```{r}
+#| label: peak energy period 
+wavedata %>%
+  filter(Site %in% c("Gold Coast Mk4", "Cairns Mk4")) %>%
+  ggplot(aes(x = Site, y = Tp)) +
+  geom_boxplot(fill = "lavender",
+               color = "midnightblue") +
+  labs(title = "Peak Energy Wave Period in Northern and Southern Queensland Regions",
+       x = "Site",
+       y = "Time Period (hour)") +
+  theme_light() +
+  coord_flip()
+```
+
+```{r}
+#| label: sea surface temperature
+wavedata %>%
+  filter(Site %in% c("Gold Coast Mk4", "Cairns Mk4")) %>%
+  ggplot(aes(x = Site, y = SST)) +
+  geom_boxplot(fill= "lemonchiffon",
+               color= "forestgreen") +
+  labs(title = "Sea Surface Temperature in Northern and Southern Queensland Regions",
+       x = "Site",
+       y = "SST (°C)") +
+  theme_light() +
+  coord_flip()
+```
+
+```{r}
+#| label: data cleaning
+
+queensland_wave <- wavedata %>%
+  mutate(DateTime = lubridate::ymd_hms(format(DateTime, format = "%Y-%m-%d %T %Z")),
+         date = date(DateTime)) %>% 
+  group_by(date, Site) %>% 
+  summarize(
+    avg_wave = mean(Hsig, na.rm = TRUE),
+    peakwave = mean(Tp, na.rm = TRUE), 
+    max_wave = mean(Hmax, na.rm = TRUE)) %>%
+filter(Site %in% c("Gold Coast Mk4", "Cairns Mk4")) %>%
+  mutate(Site = recode(Site,
+               "Gold Coast Mk4" = "Gold Coast",
+               "Cairns Mk4" = "Cairns")) %>%
+  arrange(Site)
+
+queensland_wave %>% 
+  pivot_longer(cols = contains("wave"),
+               names_to = "wave_height",
+               values_to = "wave_calc") %>%
+  filter(wave_height != "peakwave") %>%
+  ggplot(aes(x= date,
+             y= wave_calc,
+             group= wave_height,
+             color= wave_height)) +
+  geom_point() +
+  facet_wrap(~Site)
+```
+
+```{r}
+wavedata %>% 
+  distinct(Site)
+```
