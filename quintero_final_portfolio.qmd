@@ -12,8 +12,8 @@ website:
         text: "Home"
       - href: about.qmd
         text: "About Me"
-      - href: ericka_quintero_portfolio/ericka_quintero_portfolio.qmd
-        text: "Queensland, Australia Project"
+      - href: quintero_final_portfolio/quintero_final_portfolio.qmd
+        text: "Project"
 format:
   html:
     theme: cosmo

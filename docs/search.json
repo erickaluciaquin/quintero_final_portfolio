@@ -35,18 +35,11 @@
     "text": "Sea Surface Temperature in Queensland, Australia\n\n\n\n\nThis visualization highlights the difference in typical sea surface temperatures observed between Cairns in northern Queensland and the Gold Coast in the south."
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2\n\n\nHello! My name is Ericka Quintero, and I’m a junior at California State University, Monterey Bay, majoring in Marine Science with a minor in Data Science. I was born in El Centro, California, and raised in a family of six in Mexicali, Mexico. Growing up near the United States-Mexico border has made me fluent in both English and Spanish. I’m a highly motivated and creative person who enjoys practicing yoga and barre, but I’m most often found at home baking banana cookies."
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Ericka Quintero",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n1 + 1\n\n[1] 2\nEricka Quintero is a junior at California State University, Monterey Bay, majoring in Marine Science and minoring in Data Science."
+    "text": "Ericka Quintero is a rising senior at California State University, Monterey Bay, where she majors in Marine Science with a minor in Data Science. Her academic journey began at Saint Mary’s College in Notre Dame, Indiana, before she transferred to CSUMB to further explore her passion for oceanic studies and data analysis.\nIn 2022, Ericka gained hands-on experience in childhood education and coastal monitoring as a camp counselor at YMCA Camp Surf. Driven by her deep love for animals, she dedicated an entire summer to volunteering at Vet Point Vet Hospital in her hometown of Mexicali, Mexico—an invaluable opportunity to immerse herself in the veterinary field.\nThis year, she continues her commitment to youth education and outdoor learning by returning to YMCA at Camp Campbell, where she looks forward to expanding her skills and experiences."
   },
   {
     "objectID": "index.html#education",
@@ -60,6 +53,13 @@
     "href": "index.html#experience",
     "title": "Ericka Quintero",
     "section": "Experience",
-    "text": "Experience\nNew Energy Nexus | Innovation Ambassador Intern | August 2023 - September 2023\nVet Point Veterinary Hospital | Volunteer Assistant | June 2023 - Aug 2023"
+    "text": "Experience\nYMCA Camp Surf | Overnight Camp Counselor | May 2022 - August\nNew Energy Nexus | Innovation Ambassador Intern | August 2023 - September 2023\nVet Point Veterinary Hospital | Volunteer Assistant | June 2023 - Aug 2023"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About Me",
+    "section": "",
+    "text": "Hello! My name is Ericka Quintero, and I’m a rising senior at California State University, Monterey Bay, majoring in Marine Science with a minor in Data Science. I was born in El Centro, California and raised in a family of six in the hot desert of Mexicali, Mexico, which allowed me to be a fluent bilingual of English and Spanish at a young age.\nI am a proactive and progress-driven individual who focuses on the quality of the work and “making” things happen."
   }
 ]

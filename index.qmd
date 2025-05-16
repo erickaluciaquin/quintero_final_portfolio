@@ -1,0 +1,41 @@
+---
+title: "Ericka Quintero"
+about:
+  template: jolla
+  image: profilepic.jpg
+  links:
+    - icon: linkedin
+      text: LinkedIn
+      href: https://linkedin.com/in/ericka-l-quintero-ab634a225
+    - icon: github
+      text: Github
+      href: https://github.com/erickaluciaquin
+---
+
+**Ericka Quintero** is a rising senior at California State University, Monterey Bay, where she majors in Marine Science with a minor in Data Science. Her academic journey began at Saint Mary's College in Notre Dame, Indiana, before she transferred to CSUMB to further explore her passion for oceanic studies and data analysis.
+
+In 2022, Ericka gained hands-on experience in childhood education and coastal monitoring as a camp counselor at YMCA Camp Surf. Driven by her deep love for animals, she dedicated an entire summer to volunteering at Vet Point Vet Hospital in her hometown of Mexicali, Mexico—an invaluable opportunity to immerse herself in the veterinary field.
+
+This year, she continues her commitment to youth education and outdoor learning by returning to YMCA at Camp Campbell, where she looks forward to expanding her skills and experiences.
+
+## Education
+
+California State University, Monterey Bay
+
+B.S. in Marine Science \| Aug 2024 - May 2026
+
+Imperial Valley College \| Imperial, CA
+
+A.A. University Studies in Math and Science \| Aug 2023 - May 2024
+
+Saint Mary's College \| Notre Dame, IN
+
+Transfer \| Aug 2021 - May 2023
+
+## Experience
+
+YMCA Camp Surf \| Overnight Camp Counselor \| May 2022 - August
+
+New Energy Nexus \| Innovation Ambassador Intern \| August 2023 - September 2023
+
+Vet Point Veterinary Hospital \| Volunteer Assistant \| June 2023 - Aug 2023
